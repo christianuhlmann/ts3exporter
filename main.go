@@ -21,7 +21,7 @@ func main() {
 	//	return remote
 	// }
 	//remote := flag.String("remote", "localhost:10011", "remote address of server query port")
-	remote := os.LookupEnv("REMOTE");
+	remote := flag.String(os.LookupEnv("REMOTE"));
 	listen := flag.String("listen", ":9189", "listen address of the exporter")
 	user := flag.String("user", "serveradmin", "the serverquery user of the ts3exporter")
 	passwordFile := flag.String("passwordfile", "/etc/ts3exporter/password", "file containing the password. Must have 0600 permission. The file is not read if the environment variable SERVERQUERY_PASSWORD is set.")
